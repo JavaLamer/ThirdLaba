@@ -75,6 +75,8 @@ public class MainFrame extends JFrame {
         menuBar.add(fileMenu);
 // Создать пункт меню "Таблица"
         JMenu tableMenu = new JMenu("Таблица");
+        JMenu reference = new JMenu("Справка");
+        menuBar.add(reference);
 // Добавить его в главное меню
         menuBar.add(tableMenu);
 // Создать новое "действие" по сохранению в текстовый файл
@@ -136,6 +138,14 @@ public void actionPerformed(ActionEvent event) {
         getContentPane().repaint();
         }
         };
+        Action aboutProgrammAction = new AbstractAction("Победитель ЧМ") {
+            public void actionPerformed(ActionEvent event) {
+                JLabel info = new JLabel("Argentina");
+                JOptionPane.showMessageDialog(MainFrame.this, info,
+                        "О программе", JOptionPane.PLAIN_MESSAGE);
+            }
+        };
+        reference.add(aboutProgrammAction);
 // Добавить действие в меню "Таблица"
         searchValueMenuItem = tableMenu.add(searchValueAction);
 // По умолчанию пункт меню является недоступным (данных ещѐ нет)

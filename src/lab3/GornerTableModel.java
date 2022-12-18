@@ -49,8 +49,8 @@ public class GornerTableModel extends AbstractTableModel {
         else if (col==1)
             return result;
         else {
-            temp = result.intValue(); ;
-            if(temp != result)
+            temp = x.intValue();
+            if(temp != x)
                 return false;
             else
                 return true;
