@@ -209,8 +209,8 @@ public void actionPerformed(ActionEvent event) {
 // минимальному, чтобы при компоновке область совсем не сдавили
         hboxRange.setPreferredSize(new Dimension(
 
-        new Double(hboxRange.getMaximumSize().getWidth()).intValue(),
-        new Double(hboxRange.getMinimumSize().getHeight()).intValue()*2));
+                (int)(hboxRange.getMaximumSize().getWidth()),
+                (int)(hboxRange.getMinimumSize().getHeight())*2));
 // Установить область в верхнюю (северную) часть компоновки
         getContentPane().add(hboxRange, BorderLayout.NORTH);
 // Создать кнопку "Вычислить"
@@ -287,9 +287,7 @@ public void actionPerformed(ActionEvent ev) {
         hboxButtons.add(Box.createHorizontalGlue());
 // Установить предпочтительный размер области равным удвоенномуминимальному, чтобы при
 // компоновке окна область совсем не сдавили
-        hboxButtons.setPreferredSize(new Dimension(new
-        Double(hboxButtons.getMaximumSize().getWidth()).intValue(), new
-        Double(hboxButtons.getMinimumSize().getHeight()).intValue()*2));
+        hboxButtons.setPreferredSize(new Dimension((int)(hboxButtons.getMaximumSize().getWidth()), (int)(hboxButtons.getMinimumSize().getHeight())*2));
 // Разместить контейнер с кнопками в нижней (южной) областиграничной компоновки
         getContentPane().add(hboxButtons, BorderLayout.SOUTH);
 // Область для вывода результата пока что пустая

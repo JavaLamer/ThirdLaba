@@ -34,26 +34,30 @@ public class GornerTableModel extends AbstractTableModel {
 
 
     public int getRowCount() {
-        return new Double(Math.ceil((to-from)/step)).intValue()+1;
+        return (int) (Math.ceil((to - from) / step)) + 1;
     }
 
     public Object getValueAt(int row, int col) {
         Double x = from + step*row;
-        Double result = 0.0;
-        int temp = 0;
-        for (int i = 0; i < coefficients.length; i++) {
-            result = x*result+coefficients[i];
-        }
+        Double result = x;
+        Double temp = result;
+        int i = 0;
         if (col==0)
             return x;
-        else if (col==1)
+        else if (col==1){
+           i = 0;
+        result = result * x;
+        result = result + x * coefficients[i++];
             return result;
+        }
         else {
-            temp = x.intValue();
-            if(temp != x)
-                return false;
-            else
+            result = result * x;
+            result = result + x * coefficients[i++];
+            temp = Double.valueOf(result.intValue());
+            if (result - temp == 0) {
                 return true;
+            }
+            return false;
         }
 
     }
