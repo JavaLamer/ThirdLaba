@@ -39,8 +39,8 @@ public class GornerTableModel extends AbstractTableModel {
 
     public Object getValueAt(int row, int col) {
         Double x = from + step*row;
-        Double result = 0.0;
-        int temp =0;
+        Double result = x;
+        int temp =result.intValue();
         int i = 0;
         if (col==0)
             return x;
