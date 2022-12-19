@@ -129,8 +129,7 @@ saveToGraphicsMenuItem = fileMenu.add(saveToGraphicsAction);
         Action searchValueAction = new AbstractAction("Найти значение многочлена") {
 public void actionPerformed(ActionEvent event) {
 // Запросить пользователя ввести искомую строку
-        String value =
-        JOptionPane.showInputDialog(MainFrame.this, "Введите значение для поиска",
+        String value = JOptionPane.showInputDialog(MainFrame.this, "Введите значение для поиска",
         "Поиск значения", JOptionPane.QUESTION_MESSAGE);
 // Установить введенное значение в качестве иголки
         renderer.setNeedle(value);
@@ -138,9 +137,9 @@ public void actionPerformed(ActionEvent event) {
         getContentPane().repaint();
         }
         };
-        Action aboutProgrammAction = new AbstractAction("Победитель ЧМ") {
+        Action aboutProgrammAction = new AbstractAction("О программе") {
             public void actionPerformed(ActionEvent event) {
-                JLabel info = new JLabel("Argentina");
+                JLabel info = new JLabel("Рамзевич Игорь 10");
                 JOptionPane.showMessageDialog(MainFrame.this, info,
                         "О программе", JOptionPane.PLAIN_MESSAGE);
             }
